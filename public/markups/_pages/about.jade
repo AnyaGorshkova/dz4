@@ -1,0 +1,247 @@
+extends _template
+
+block variables
+  - var title = 'Обо мне'
+
+block content
+  div.wrapper-page
+   nav.main-nav.hide
+    ul.main-nav__list
+     li.main-nav__item
+      a.main-nav__link(href="portfolio.html") Мои работы
+     li.main-nav__item
+      a.main-nav__link(href="blog.html") Блог
+     li.main-nav__item
+      a.main-nav__link(href="about.html") Обо мне 
+     li.main-nav__item
+      a.main-nav__link(href="index.html") Авторизация
+   header.header-page.header-page_angle.header-page_about
+    div.container
+     div.social-container
+      ul.social-list
+      - var icons = ['vk', 'github', 'in']
+      each icon in icons
+       li.social-list__item
+        a.social-list__link(href="#")
+         svg.social-list__svg
+          use(xlink:href='/assets/img/sprite.svg#'+icon)
+     div.humburger-container
+      div.ham
+       div.el.el1
+       div.el.el2
+       div.el.el3
+    div.site-description
+     div.site-description__avatar
+      div.avatar
+       img.avatar__image(src="assets/img/avatar.png", alt="")
+      div.site-info
+       div.site-info__name Анна Горшкова
+       div.site-info__descr Личный сайт веб разработчика
+       div.site-info__bg
+        svg
+          use(xlink:href='/assets/img/sprite.svg#portfolio_header')
+    div.arrow-down
+     svg.arrow-down__svg
+      use(xlink:href='/assets/img/sprite.svg#arrow_down')
+
+   section.section.section_about-me
+     div.section_about-me__content
+      div.section_about-me__part.section_about-me__part-about
+       div.section__header.section__header_small
+        div.about-part__header
+         div.header-underline-bg__svg-container
+          svg.header-underline-bg__svg
+           use(xlink:href='/assets/img/sprite.svg#about_header')
+         div.header-underline-bg__title Обо мне
+       div.about_part__image-container
+        img.about_part__image(src="assets/img/avatar.png", alt="")
+       div.about_part__header-text
+        div.header-underline
+         div.header-underline__title.header-underline__title_about Кто я 
+       div.about_part__text-container
+        div.about_part__text
+         p Я вебразрабочик из Красноярска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+         p Этот сайт я сделал в рамках обучения в школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво.
+      div.section_about-me__part.section_about-me__part-my-skills
+       div.my-skills-part__header
+        div.header-underline
+         div.header-underline__title.header-underline__title_about Чем я могу быть вам полезен
+       div.my-skills-part__description Больше всего меня привлекает Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend.  Но давайте по порядку.
+       div.my-skills__skills
+        ul.my-skills__list
+         div.my-skills__header-list Frontend
+         li.my-skills__item
+          svg(viewbox="0 0 55 55")
+           circle(r="25" cx="25" cy="25")
+          div(class="percent")
+           div.my-skills__text HTML5
+         li.my-skills__item
+          svg(viewbox="0 0 55 55")
+           circle(r="25" cx="25" cy="25")
+          div(class="percent")
+           div.my-skills__text CSS3
+         li.my-skills__item
+          svg(viewbox="0 0 55 55")
+           circle(r="25" cx="25" cy="25")
+          div(class="percent")
+           div.my-skills__text JavaScript & JQuery
+        ul.my-skills__list
+         div.my-skills__header-list Backend
+         li.my-skills__item
+          svg(viewbox="0 0 55 55")
+           circle(r="25" cx="25" cy="25")
+          div(class="percent")
+           div.my-skills__text PHP
+         li.my-skills__item
+          svg(viewbox="0 0 55 55")
+           circle(r="25" cx="25" cy="25")
+          div(class="percent")
+           div.my-skills__text MySQL
+         li.my-skills__item
+          svg(viewbox="0 0 55 55")
+           circle(r="25" cx="25" cy="25")
+          div(class="percent")
+           div.my-skills__text Node.js
+         li.my-skills__item
+          svg(viewbox="0 0 55 55")
+           circle(r="25" cx="25" cy="25")
+          div(class="percent")
+           div.my-skills__text Mongo.db
+        ul.my-skills__list
+         div.my-skills__header-list WorkFlow
+         li.my-skills__item
+          svg(viewbox="0 0 55 55")
+           circle(r="25" cx="25" cy="25")
+          div(class="percent")
+           div.my-skills__text Gulp
+         li.my-skills__item
+          svg(viewbox="0 0 55 55")
+           circle(r="25" cx="25" cy="25")
+          div(class="percent")
+           div.my-skills__text Git
+         li.my-skills__item
+          svg(viewbox="0 0 55 55")
+           circle(r="25" cx="25" cy="25")
+          div(class="percent")
+           div.my-skills__text Bower
+   section.section.section_map
+    div#map
+    div.container-contact
+     div.popup-connect.popup-connect_contact
+      div.popup-connect__header
+       div.header-underline
+        div.header-underline__title.header-underline__title_about Контакты
+      div.contact-container
+       ul.contact__list
+        li.contact__item.contact__item_skype
+         div.contact__icon
+          svg.contact__svg
+           use(xlink:href='/assets/img/sprite.svg#skype')
+         div.contact__text gorshkova_anna_spb
+        li.contact__item.contact__item_mail
+         div.contact__icon
+          svg.contact__svg
+           use(xlink:href='/assets/img/sprite.svg#envelope2')
+         div.contact__text anua_spb@mail.ru
+        li.contact__item.contact__item_phone
+         div.contact__icon
+          svg.contact__svg
+           use(xlink:href='/assets/img/sprite.svg#phone2')
+         div.contact__text +79214915397
+        li.contact__item.contact__item_address
+         div.contact__icon
+          svg.contact__svg
+           use(xlink:href='/assets/img/sprite.svg#map_marker')
+         div.contact__text г. Красноярск
+    div.footer-page
+     div.footer_test
+      div.container 
+       div.footer-part Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool
+       div.footer-part
+        nav.footer-nav
+         ul.footer-nav__list
+          li.footer-nav__item
+           a.footer-nav__link(href="portfolio.html") Мои работы
+          li.footer-nav__item
+           a.footer-nav__link(href="about.html") Обо мне
+          li.footer-nav__item
+           a.footer-nav__link(href="blog.html") Блог
+          li.footer-nav__item
+           a.footer-nav__link(href="index.html") Авторизация
+        div.footer-social
+         ul.social-list
+          li.social-list__item
+           a.social-list__link(href="#")
+            svg.social-list__svg
+             use(xlink:href='/assets/img/sprite.svg#vk')
+          li.social-list__item
+           a.social-list__link(href="#")
+            svg.social-list__svg
+             use(xlink:href='/assets/img/sprite.svg#github')
+          li.social-list__item
+           a.social-list__link(href="#")
+            svg.social-list__svg
+             use(xlink:href='/assets/img/sprite.svg#in')
+       div.footer-part 
+        div.footer-part__text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живёте
+         div.footer-part__author - Martin Golding
+     footer.footer-bottom.footer-bottom_page
+      div.container
+       ul.footer-bottom__list
+        li.footer-bottom__item Анна Горшкова
+        li.footer-bottom__item Создано с лбовью в LoftSchool
+        li.footer-bottom__item 2016
+  div.preloader-container
+   div.preloader
+    div.preloader__percent 0%
+    div.preloader__image
+     include ../../assets/img/forest.svg
+  script function initMap() {
+    |var myLatLng = {lat: 56.01839, lng: 92.86717};
+    |var styles = [
+    |{
+    |  stylers: [
+    |    { hue: "#86a77a" },
+    |    { saturation: -20 }
+    | ]
+    |},{
+    |  featureType: "water",
+    |  elementType: "geometry",
+    |  stylers: [
+    |    { color: "#86a77a" },
+    |    { visibility: "simplified" }
+    |  ]
+    |},{
+    |  featureType: "road",
+    |  elementType: "labels",
+    |  stylers: [
+    |    { visibility: "off" }
+    |  ]
+    |}
+    |];
+
+
+    |var styledMap = new google.maps.StyledMapType(styles,
+    |{name: "Styled Map"});
+
+    |var mapOptions = {
+    |zoom: 13,
+    |center: myLatLng,
+    |mapTypeControlOptions: {
+    |  mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
+    |}
+    |};
+    
+    |var map = new google.maps.Map(document.getElementById('map'),
+    |mapOptions);
+
+    |map.mapTypes.set('map_style', styledMap);
+    |map.setMapTypeId('map_style');
+
+    |var marker = new google.maps.Marker({
+    | position: myLatLng,
+    |  map: map,
+    |  title: 'Красноярск'
+    |});
+    |}
+  script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMb4OsRZsmx4od1ypmI3RdAl3VI2JsxN4&callback=initMap")

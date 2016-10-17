@@ -1,0 +1,227 @@
+extends _template
+
+block variables
+  - var title = 'Обо мне'
+
+block content
+  div.wrapper-page
+   nav.main-nav.hide
+    ul.main-nav__list
+     li.main-nav__item
+      a.main-nav__link(href="portfolio.html") Мои работы
+     li.main-nav__item
+      a.main-nav__link(href="blog.html") Блог
+     li.main-nav__item
+      a.main-nav__link(href="about.html") Обо мне 
+     li.main-nav__item
+      a.main-nav__link(href="index.html") Авторизация
+   header.header-page.header-page_angle.header-page_portfolio
+    div.container
+     div.social-container
+      ul.social-list
+      - var icons = ['vk', 'github', 'in']
+      each icon in icons
+       li.social-list__item
+        a.social-list__link(href="#")
+         svg.social-list__svg
+          use(xlink:href='/assets/img/sprite.svg#'+icon)
+     div.humburger-container
+      div.ham
+       div.el.el1
+       div.el.el2
+       div.el.el3
+    div.site-description
+     div.site-description__avatar
+      div.avatar
+       img.avatar__image(src="assets/img/avatar.png", alt="")
+      div.site-info
+       div.site-info__name Анна Горшкова
+       div.site-info__descr Личный сайт веб разработчика
+       div.site-info__bg
+        svg
+          use(xlink:href='/assets/img/sprite.svg#portfolio_header')
+    div.arrow-down
+     svg.arrow-down__svg
+      use(xlink:href='/assets/img/sprite.svg#arrow_down')
+   section.section.section_my-works
+    div.section__header
+     div.header-underline-bg__svg-container
+      svg.header-underline-bg__svg
+       use(xlink:href='/assets/img/sprite.svg#works_header')
+     div.header-underline-bg__title Мои работы
+
+
+    div.slider-container
+     div.slider.slider1
+      div.slider__bigimg
+        ul.slider__list
+         li.slider__item.slider__item_big.active(style="opacity:1;")
+          img(src="assets/img/work-1.png" alt="").slider__img
+         li.slider__item.slider__item_big
+          img(src="assets/img/work-2.png" alt="").slider__img
+         li.slider__item.slider__item_big
+          img(src="assets/img/work-3.png" alt="").slider__img
+         li.slider__item.slider__item_big
+          img(src="assets/img/work-4.png" alt="").slider__img
+
+      div.slider__description-container
+       ul.slider__descriptions
+        li.slider__description.active(style="opacity:1;")
+         div.description-container
+          div.slider__title
+           div.header-underline
+            div.header-underline__title.header-underline__title_about Сайт школы онлайн образования
+          div.slider__technologies html, css, javascript
+          div.login-button.login-button_green
+           a.login-button__link(href="#") Посмотреть сайт
+        li.slider__description
+         div.description-container
+          div.slider__title
+           div.header-underline
+            div.header-underline__title.header-underline__title_about Сайт 2
+          div.slider__technologies html, css, javascript
+          div.login-button.login-button_green
+           a.login-button__link(href="#") Посмотреть сайт
+        li.slider__description
+         div.description-container
+          div.slider__title
+           div.header-underline
+            div.header-underline__title.header-underline__title_about Сайт 3
+          div.slider__technologies html, css, javascript
+          div.login-button.login-button_green
+           a.login-button__link(href="#") Посмотреть сайт
+        li.slider__description
+         div.description-container
+          div.slider__title
+           div.header-underline
+            div.header-underline__title.header-underline__title_about Сайт 4
+          div.slider__technologies html, css, javascript
+          div.login-button.login-button_green
+           a.login-button__link(href="#") Посмотреть сайт
+    
+       
+      div.slider__buttons
+       div.slider__button.slider__button_prev
+        ul.slider__list
+         li.slider__item.slider__item_prev
+          img(src="assets/img/work-1.png" alt="").slider__img
+         li.slider__item.slider__item_prev
+          img(src="assets/img/work-2.png" alt="").slider__img
+         li.slider__item.slider__item_prev
+          img(src="assets/img/work-3.png" alt="").slider__img
+         li.slider__item.slider__item_prev.active
+          img(src="assets/img/work-4.png" alt="").slider__img
+        a(href="#").controls.controls_prev назад
+       div.slider__button.slider__button_next
+        ul.slider__list
+         li.slider__item.slider__item_next
+          img(src="assets/img/work-1.png" alt="").slider__img
+         li.slider__item.slider__item_next.active
+          img(src="assets/img/work-2.png" alt="").slider__img
+         li.slider__item.slider__item_next
+          img(src="assets/img/work-3.png" alt="").slider__img
+         li.slider__item.slider__item_next
+          img(src="assets/img/work-4.png" alt="").slider__img
+        a(href="#").controls.controls_next вперёд
+  
+
+
+   section.section.section_about
+    div.section__header.section__header2
+     div.header-underline-bg__svg-container
+      svg.header-underline-bg__svg
+       use(xlink:href='/assets/img/sprite.svg#about_header')
+     div.header-underline-bg__title Что обо мне говорят
+    div.reviews-container
+     div.container
+      ul.reviews-list
+       li.review
+        div.review__container
+         div.review__img
+          div.avatar.avatar_small
+           img.avatar__image(src="assets/img/zar.png", alt="")
+         div.review__text-container
+          div.review__svg
+          div.review__text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах!
+         div.review__author-container
+          div.review_author-name Зар Захаров
+          div.review_author-work преподаватель
+       li.review
+        div.review__container
+         div.review__img
+          div.avatar.avatar_small
+           img.avatar__image(src="assets/img/dima.png", alt="")
+         div.review__text-container
+          div.review__svg
+          div.review__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжёлых испытаний и бессонных ночей!
+         div.review__author-container
+          div.review_author-name Ковальчук Дмирий
+          div.review_author-work основатель Loftschool
+
+    div.section-blur
+     div.blur__bg
+      img(src="assets/img/bg-about.png" alt="")
+     div.popup-container_outer
+      div.content
+       div.popup-connect1
+        div.popup-connect__header
+         div.header-underline
+          div.header-underline__title.header-underline__title_about Связаться со мной
+        form.login_form
+         div.input_container
+          input#login_input.login_input(name='name' type=text, placeholder="Имя" data-mes="Введите имя")
+         div.input_container
+          input#pass_input.login_input(name='email' type=text, placeholder="Email" data-mes="Введите Email")
+         div.message_container
+          textarea#message(name="message", cols="30", rows="5", placeholder="Ваше сообщение" data-mes="Введите сообщение")
+        div.buttons_container
+         ul.buttons
+          li.button.button_login.button_submit
+           a.button_link(href="#") Отправить
+          li.button.button_login.button_clear
+           a.button_link(href="#") Очистить
+      div.popup-container
+
+    div.footer-page
+     div.footer_test
+      div.container 
+       div.footer-part Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool
+       div.footer-part
+        nav.footer-nav
+         ul.footer-nav__list
+          li.footer-nav__item
+           a.footer-nav__link(href="portfolio.html") Мои работы
+          li.footer-nav__item
+           a.footer-nav__link(href="about.html") Обо мне
+          li.footer-nav__item
+           a.footer-nav__link(href="blog.html") Блог
+          li.footer-nav__item
+           a.footer-nav__link(href="index.html") Авторизация
+        div.footer-social
+         ul.social-list
+          li.social-list__item
+           a.social-list__link(href="#")
+            svg.social-list__svg
+             use(xlink:href='/assets/img/sprite.svg#vk')
+          li.social-list__item
+           a.social-list__link(href="#")
+            svg.social-list__svg
+             use(xlink:href='/assets/img/sprite.svg#github')
+          li.social-list__item
+           a.social-list__link(href="#")
+            svg.social-list__svg
+             use(xlink:href='/assets/img/sprite.svg#in')
+       div.footer-part 
+        div.footer-part__text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живёте
+         div.footer-part__author - Martin Golding
+     footer.footer-bottom.footer-bottom_page
+      div.container
+       ul.footer-bottom__list
+        li.footer-bottom__item Анна Горшкова
+        li.footer-bottom__item Создано с лбовью в LoftSchool
+        li.footer-bottom__item 2016
+  div.preloader-container
+   div.preloader
+    div.preloader__percent 0%
+    div.preloader__image
+     include ../../assets/img/forest.svg

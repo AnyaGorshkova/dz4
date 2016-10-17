@@ -1,0 +1,134 @@
+extends _template
+
+block variables
+  - var title = 'Мой блог'
+
+block content
+  div.wrapper-page
+   nav.main-nav.hide
+    ul.main-nav__list
+     li.main-nav__item
+      a.main-nav__link(href="portfolio.html") Мои работы
+     li.main-nav__item
+      a.main-nav__link(href="blog.html") Блог
+     li.main-nav__item
+      a.main-nav__link(href="about.html") Обо мне 
+     li.main-nav__item
+      a.main-nav__link(href="index.html") Авторизация
+   header.header-page.header-page_angle.header-page_blog
+    div.container
+     div.social-container
+      ul.social-list
+      - var icons = ['vk', 'github', 'in']
+      each icon in icons
+       li.social-list__item
+        a.social-list__link(href="#")
+         svg.social-list__svg
+          use(xlink:href='/assets/img/sprite.svg#'+icon)
+     div.humburger-container
+      div.ham
+       div.el.el1
+       div.el.el2
+       div.el.el3
+    div.site-description
+     div.site-description__avatar
+      div.avatar
+       img.avatar__image(src="assets/img/avatar.png", alt="")
+     div.site-description__header-underline
+      div.header-underline-bg__svg-container
+        svg.header-underline-bg__svg.header-underline-bg__svg_white
+         use(xlink:href='/assets/img/sprite.svg#blog_header')
+      div.header-underline-bg__title Блог
+     div.site-info__descr Статьи, которые я написал
+    div.arrow-down
+     svg.arrow-down__svg
+      use(xlink:href='/assets/img/sprite.svg#arrow_down')
+   section.section.section_blog
+    div.aside-container
+     aside.aside-blog
+      ul.aside-blog__list
+       li.aside-blog__item
+        a.asie-blog__link(href="#a1") Как быть начинающим разработчиком и не сойти с ума
+       li.aside-blog__item
+        a.asie-blog__link(href="#a2") CSS по БЭМ
+       li.aside-blog__item 
+        a.asie-blog__link(href="#a3") название статьи
+       li.aside-blog__item
+        a.asie-blog__link(href="#a4") название статьи
+       li.aside-blog__item
+        a.asie-blog__link(href="#a5") название статьи
+    main.main-blog
+     article.main-blog__article#a1
+      div.main-blog__header Как быть начинающим разработчиком и не сойти с ума
+      div.main-blog__date 22 ноября 2016
+      div.main-blog__contet Не сравнивай
+       p Первые месяцы начинающий разработчик сильно переживает, что в команде есть люди моложе или равные по возрасту, но уже работающие гораздо эффективнее и знающие в разы больше. Сравнивать себя с ними — тупиковый путь, и ни к чему хорошему он не приведёт. Гораздо лучше сравнивать себя сегодняшнего с собой вчерашним. Если делаешь то, что ещё недавно считал слишком сложным для себя, то ты растёшь, и это отлично.
+       p Не отвлекайся
+       p Как это обычно бывает: о, почитаю про grid’ы, потом зайду на ютуб, там вышел новый курс по Gulp от Кантора, а потом в твиттере опубликовали ссылку на новую JS-библиотеку. Основы PHP, сделай свой интернет-магазин на Ruby on Rails, новый курс по React…
+       |В результате получается посредственный разработчик, который что-то где-то слышал, но не имеет полноценного понимания и не в состоянии выдать качественный результат. Решением является составление детального плана обучения. Это не значит, что не надо читать новости, просто стоит сократить количество и внимание, уделяемое им. Рекомендую посмотреть это. Особенно полезно про концентрацию.Вернёмся к плану. Для фронтенд-разработчиков последовательность очевидна — качественная адаптивная вёрстка, вся теория по ES 2015, можно немного jQuery и уже только потом популярные фреймворки. Не стоит гнаться за модой и спешить изучать тот же React. Почему? На этот вопрос уже неплохо ответили тут. Многие из моих знакомых начинали другим путём и всё равно приходили к тому, что надо последовательно обучаться.
+
+       p Прими тот факт, что ты будешь много косячить
+       p Тебе предстоит ошибаться и ошибаться много. Недавно я испортил репозиторий с недельной работой своих товарищей. Можно только представить мой уровень «радости». К счастью, коллеги смогли восстановить всё без долгих затрат времени и сил.
+     article.main-blog__article#a2
+      div.main-blog__header CSS по БЭМ
+      div.main-blog__date 22 ноября 2016
+      div.main-blog__contet Селекторы
+       p В БЭМ не используют селекторы тегов и идентификаторов. Стили блоков и элементов описываются через селекторы классов.
+       p Селекторы классов
+       p Позволяют указать конкретный HTML-элемент страницы, независимо от тега. Обращение к селектору класса происходит через атрибут class, который должен иметь каждый HTML-элемент.
+       
+     article.main-blog__article#a3
+      div.main-blog__header Самое важное в SASS
+      div.main-blog__date 22 ноября 2016
+      div.main-blog__contet Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam inventore quisquam ipsa, cumque ex delectus voluptate doloremque, accusamus, nulla voluptates veritatis sed sit officia eveniet amet aut iure. Nostrum, laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit officia eveniet optio voluptatem nesciunt neque sunt alias fugiat nihil, esse ratione tenetur blanditiis quam in assumenda ea delectus, ad deleniti.
+     article.main-blog__article#a4
+      div.main-blog__header Самое важное в SASS
+      div.main-blog__date 22 ноября 2016
+      div.main-blog__contet Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam inventore quisquam ipsa, cumque ex delectus voluptate doloremque, accusamus, nulla voluptates veritatis sed sit officia eveniet amet aut iure. Nostrum, laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit officia eveniet optio voluptatem nesciunt neque sunt alias fugiat nihil, esse ratione tenetur blanditiis quam in assumenda ea delectus, ad deleniti.
+     article.main-blog__article#a5
+      div.main-blog__header Самое важное в SASS
+      div.main-blog__date 22 ноября 2016
+      div.main-blog__contet Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam inventore quisquam ipsa, cumque ex delectus voluptate doloremque, accusamus, nulla voluptates veritatis sed sit officia eveniet amet aut iure. Nostrum, laborum.  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit officia eveniet optio voluptatem nesciunt neque sunt alias fugiat nihil, esse ratione tenetur blanditiis quam in assumenda ea delectus, ad deleniti.
+   div.footer-page
+     div.footer_test
+      div.container 
+       div.footer-part Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool
+       div.footer-part
+        nav.footer-nav
+         ul.footer-nav__list
+          li.footer-nav__item
+           a.footer-nav__link(href="portfolio.html") Мои работы
+          li.footer-nav__item
+           a.footer-nav__link(href="about.html") Обо мне
+          li.footer-nav__item
+           a.footer-nav__link(href="blog.html") Блог
+          li.footer-nav__item
+           a.footer-nav__link(href="index.html") Авторизация
+        div.footer-social
+         ul.social-list
+          li.social-list__item
+           a.social-list__link(href="#")
+            svg.social-list__svg
+             use(xlink:href='/assets/img/sprite.svg#vk')
+          li.social-list__item
+           a.social-list__link(href="#")
+            svg.social-list__svg
+             use(xlink:href='/assets/img/sprite.svg#github')
+          li.social-list__item
+           a.social-list__link(href="#")
+            svg.social-list__svg
+             use(xlink:href='/assets/img/sprite.svg#in')
+       div.footer-part 
+        div.footer-part__text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живёте
+         div.footer-part__author - Martin Golding
+     footer.footer-bottom.footer-bottom_page
+      div.container
+       ul.footer-bottom__list
+        li.footer-bottom__item Анна Горшкова
+        li.footer-bottom__item Создано с лбовью в LoftSchool
+        li.footer-bottom__item 2016
+  div.preloader-container
+   div.preloader
+    div.preloader__percent 0%
+    div.preloader__image
+     include ../../assets/img/forest.svg

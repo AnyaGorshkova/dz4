@@ -1,0 +1,81 @@
+extends _template
+
+block variables
+  - var title = 'Главная страница'
+
+block content
+  div.wrapper-page.wrapper-page_welcome
+   div.login-button#login-button
+    a.login-button__link(href="#") Авторизоваться
+
+   div.popap-wrapper-container
+    div.flipper
+     div.front.popap-wrapper
+      div.avatar
+       img.avatar__image(src="assets/img/avatar.png", alt="Анна Горшкова")
+      div.site-info-container
+       div.site-info
+        div.site-info__name Анна Горшкова
+        div.site-info__descr Личный сайт веб разработчика
+      div.popup__icons
+       ul.social-list
+        - var icons = ['vk', 'github', 'in']
+        each icon in icons
+         li.social-list__item
+          a.social-list__link(href="#")
+           svg.social-list__svg
+            use(xlink:href='/assets/img/sprite.svg#'+icon)
+      ul.buttons
+       li.button
+        a.button_link(href="portfolio.html") Мои работы
+       li.button
+        a.button_link(href="about.html") Обо мне
+       li.button
+        a.button_link(href="blog.html") Блог 
+
+     div.popap-wrapper.back
+       div.popup-wrapper__header
+        div.header-underline
+         div.header-underline__title Авторизуйтесь
+       form.login_form#login_form
+        div.input_container
+         label.icon_input(for="login_input")
+         input#login_input.login_input(name='login' type=text, placeholder="Логин" data-mes="Введите логин")
+        div.input_container
+         label.icon_input(for="pass_input")
+         input#pass_input.login_input(name='password' type=text, placeholder="Пароль" data-mes="Введите пароль")
+        div.cap_container
+         div.check
+          input.check_robot#check_robot(name='checkMan' type="checkbox")
+          label.check_robot_label(for="check_robot") Я человек
+         ul.radio
+          div.radio_title Вы точно не робот?
+          li.radio-container
+           input.radio_robot#radio_robot_y(type="radio" name="robot" value="y" )
+           label.radio_robot_label(for="radio_robot_y") Да
+          li.radio-container
+           input.radio_robot#radio_robot_no(type="radio" name="robot" value="n")
+           label.radio_robot_label(for="radio_robot_no") Нет
+       ul.buttons
+        li.button.button_login
+         a.button_link.button_return(href="#") На главную
+        li.button.button_login
+         a.button_link.button_submit(href="#") Войти
+
+  footer.footer-bottom
+   div.container
+    ul.footer-bottom__list
+      li.footer-bottom__item Анна Горшкова
+      li.footer-bottom__item Создано с лбовью в LoftSchool
+      li.footer-bottom__item 2016
+  div.modal.hide
+   div.modal__content
+    div.modal__messege Сообщение отправлено!
+    div.login-button#modal-button
+     a.login-button__link(href="#") Закрыть
+  div.preloader-container
+   div.preloader
+    div.preloader__percent 0%
+    div.preloader__image
+     include ../../assets/img/forest.svg
+
