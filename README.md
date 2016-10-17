@@ -1,12 +1,9 @@
-#Учебная сборка Loftschool (выпускной проект №1) 
+#Создание web-сервера с помощью node.js и mongodb (выпускной проект №1) 
 
-Stack:
- - Gulp 4.0
- 
 Getting started:
 
-1. clone this repo
-2. cd path/to/
+1. clone https://github.com/AnyaGorshkova/dz4.git test
+2. cd test
 3. npm install
 4. запуск сервера бд C:\mongodb\bin\mongod.exe
 5. запуск сервера node index.js
